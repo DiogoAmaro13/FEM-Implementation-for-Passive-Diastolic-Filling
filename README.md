@@ -1,16 +1,17 @@
 # FEM Implementation for Passive Diastolic Filling
+
 A modular FEniCS-based implementation for solving the system of PDEs governing the passive diastolic filling of the left ventricle using the Holzapfel-Ogden constitutive model. This system is given by:
 
-\begin{equation}
-\label{lvdyn}
+$$
 \begin{cases}
 \nabla \cdot \boldsymbol{\sigma} + \mathbf{b} = 0 & \text{in } \Omega(t), \\
 \boldsymbol{\sigma} \cdot \mathbf{n} = \mathbf{t} & \text{on } \Gamma^N, \\
 \mathbf{u} = \mathbf{u}_0 & \text{on}\; \Gamma^D.
 \end{cases}
-\end{equation}
+$$
 
-Here, $\mathbf{b}$ is the body force density per unit volume, $\mathbf{n}$ is the normal direction of $\partial \Omega$, $\mathbf{t}$ is the traction force, $\Gamma^N$ and $\Gamma^D$ are the Neumann and Dirichlet boundaries.
+Here, $ \mathbf{b} $ is the body force density per unit volume, $ \mathbf{n} $ is the normal direction of $ \partial \Omega $, $ \mathbf{t} $ is the traction force, $ \Gamma^N $ and $ \Gamma^D $ are the Neumann and Dirichlet boundaries.
+
 
 
 
