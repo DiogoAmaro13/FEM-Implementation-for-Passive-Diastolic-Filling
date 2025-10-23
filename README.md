@@ -1,7 +1,8 @@
-Cardiac Mechanics Simulation
-A modular FEniCS-based implementation for simulating passive mechanical behavior of cardiac tissue using the Holzapfel-Ogden constitutive model.
-Project Structure
+# FEM Implementation for Passive Diastolic Filling
+A modular FEniCS-based implementation for solving the system of PDEs governing the passive diastolic filling of the left ventricle using the Holzapfel-Ogden constitutive model.
+## Project Structure
 
+```bash
 .
 ├── config.py              # Configuration and parameters
 ├── mesh_utils.py          # Mesh loading and geometric utilities
@@ -11,25 +12,30 @@ Project Structure
 ├── postprocessing.py      # Post-processing and visualization utilities
 ├── main.py                # Main execution script
 ├── diagnostics.py         # Diagnostic and verification tools
-└── README.md              # This file
+└── README.md              
+```
 
-Module Overview
+## Module Overview
+```bash 
 config.py
+```
 Contains all configuration classes:
 
 MeshConfig: File paths for mesh, boundaries, and fiber directions
 MaterialParameters: Holzapfel-Ogden material parameters
 SolverParameters: Newton and Krylov solver settings
 SimulationParameters: Simulation control (pressure, steps, etc.)
-
+```bash
 mesh_utils.py
+```
 Utilities for mesh and geometry:
 
-load_ellipsoid_data(): Load mesh, boundaries, and fiber fields
-compute_cavity_volume(): Calculate cavity volume via divergence theorem
-compute_reference_volume(): Get initial undeformed volume
-
+```bash load_ellipsoid_data()```: Load mesh, boundaries, and fiber fields
+```bash compute_cavity_volume()```: Calculate cavity volume via divergence theorem
+```bash compute_reference_volume()```: Get initial undeformed volume
+```bash
 material_model.py
+```
 Cardiac tissue constitutive model:
 
 CardiacMaterial: Implements Holzapfel-Ogden orthotropic hyperelastic model
@@ -39,8 +45,9 @@ Active stress generation (fiber + transverse)
 Automatic kinematic computations
 
 
-
+```bash
 solver.py
+```
 Finite element solver:
 
 CardiacSolver: Mixed Taylor-Hood formulation (P2-P1)
@@ -50,8 +57,9 @@ Implements boundary conditions
 Manages nonlinear solution process
 
 
-
+```bash
 simulation.py
+```
 High-level simulation control:
 
 CardiacSimulation: Orchestrates incremental pressure loading
@@ -61,8 +69,9 @@ Tracks volume-pressure history
 Coordinates result output
 
 
-
+```bash
 postprocessing.py
+```
 Analysis and visualization:
 
 compute_strain_stress(): Green-Lagrange strain and PK2 stress
@@ -72,7 +81,10 @@ check_equilibrium_residual(): Verify equilibrium
 check_energy_balance(): Verify work balance
 check_normal_stress(): Validate boundary conditions
 
+
+```bash
 main.py
+```
 Primary execution script that:
 
 Loads mesh and fiber data
@@ -80,7 +92,10 @@ Initializes material and solver
 Runs pressure loading simulation
 Generates outputs and plots
 
+
+```bash
 diagnostics.py
+```
 Verification and debugging script that:
 
 Checks equilibrium residual
