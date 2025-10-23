@@ -25,12 +25,12 @@ MeshConfig: File paths for mesh, boundaries, and fiber directions
 MaterialParameters: Holzapfel-Ogden material parameters
 SolverParameters: Newton and Krylov solver settings
 SimulationParameters: Simulation control (pressure, steps, etc.)
-```bash
+```
 mesh_utils.py
 ```
 Utilities for mesh and geometry:
 
-```bash load_ellipsoid_data()```: Load mesh, boundaries, and fiber fields
+``` load_ellipsoid_data()```: Load mesh, boundaries, and fiber fields
 ```bash compute_cavity_volume()```: Calculate cavity volume via divergence theorem
 ```bash compute_reference_volume()```: Get initial undeformed volume
 ```bash
