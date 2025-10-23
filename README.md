@@ -110,65 +110,49 @@ Save displacement, strain, and stress fields; <br/>
 Generate a pressure-volume curve to validate physiological behaviour.
 
 ### Run Diagnostics
-```python diagnostics.py```
-Performs verification checks on the solution.
+```bash 
+python diagnostics.py
+```
+Performs verification checks on the solution (energy balance and residuals)
 
 ### Custom Configuration
-Modify parameters:
-```from config import MaterialParameters, SimulationParameters```
+To modify parameters:
+```bash 
+from config import MaterialParameters, SimulationParameters
 
-## Change material stiffness
+# Change material stiffness
 material_params = MaterialParameters(alpha=1.5)
 
-## Change simulation parameters
+# Change simulation parameters
 sim_params = SimulationParameters()
 sim_params.total_pressure = 15 * 133.3 / 1000.0  # 15 mmHg
 sim_params.steps = 30
-Output Files
-After running main.py, the following files are generated:
+```
+## Output Files
+After running ```main.py```, the following files are generated:
 
-HV2/results/u.pvd - Displacement field (ParaView)
-HV2/results/strain.pvd - Green-Lagrange strain tensor
-HV2/results/stress.pvd - 2nd Piola-Kirchhoff stress
-HV2/results/output.xdmf - Cauchy stress (XDMF format)
-pv_curve.pdf - Pressure-volume relationship plot
+```HV2/results/u.pvd``` - Displacement field 
+```HV2/results/strain.pvd``` - Green-Lagrange strain tensor
+```HV2/results/stress.pvd``` - 2nd Piola-Kirchhoff stress
+```HV2/results/output.xdmf``` - Cauchy stress
+```pv_curve.pdf``` - Pressure-volume relationship plot
 
-Requirements
+Each one of them must be visualized using an appropriate software. In this case, ParaView was used. It should be noted that each of the three ```.pvd``` files compile 20 different ```.vtu``` files, so they must be in the same directory when opening the ```.pvd``` files in ParaView.
 
-FEniCS (tested with 2019.1.0)
+## Requirements
+
+FEniCS (tested with 2019.1.0) 
 NumPy
 Matplotlib
 Python 3.6+
 
-Material Model
-The implementation uses the Holzapfel-Ogden orthotropic model:
-Passive stress:
-σ = a·exp(b(I₁-3))·B 
-    + 2·aₓ·(I₄ₓ-1)·exp(bₓ(I₄ₓ-1)²)·(f⊗f + s⊗s + ...)
-    + aₓₛ·I₈ₓₛ·exp(bₓₛ·I₈ₓₛ²)·(f⊗s + s⊗f)
-    - p·I
+However, we strongly recommend activating the conda environment which already has all necessary dependencies. Just write
+```bash
+conda activate jax-fem-env
+```
+in the terminal.
 
-Active stress:
-σₐ = Tₐ·(f⊗f + η·s⊗s + η·n⊗n)
-where f, s, n are fiber, sheet, and normal directions.
-Solver Configuration
-The solver uses:
 
-Mixed formulation: Taylor-Hood elements (P2-P1)
-Nonlinear solver: Newton-Raphson
-Linear solver: MUMPS (direct)
-Convergence: Incremental criterion with tolerances of 1e-3
-
-Boundary Conditions
-
-Base (marker 10): Fixed (zero displacement)
-Endocardium (marker 30): Pressure loading
-Epicardium (marker 40): Traction-free
-
-References
-
-Holzapfel GA, Ogden RW (2009). Constitutive modelling of passive myocardium: a structurally based framework for material characterization. Phil Trans R Soc A 367:3445-3475.
-Land S, et al. (2015). Verification of cardiac mechanics software: benchmark problems and solutions for testing active and passive material behaviour. Proc R Soc A 471:20150641.
 
 License
 MIT License - See LICENSE file for details.
