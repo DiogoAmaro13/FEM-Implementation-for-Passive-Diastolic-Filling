@@ -131,19 +131,19 @@ sim_params.steps = 30
 ## Output Files
 After running ```main.py```, the following files are generated:
 
-```HV2/results/u.pvd``` - Displacement field 
-```HV2/results/strain.pvd``` - Green-Lagrange strain tensor
-```HV2/results/stress.pvd``` - 2nd Piola-Kirchhoff stress
-```HV2/results/output.xdmf``` - Cauchy stress
+```HV2/results/u.pvd``` - Displacement field <br/>
+```HV2/results/strain.pvd``` - Green-Lagrange strain tensor <br/>
+```HV2/results/stress.pvd``` - 2nd Piola-Kirchhoff stress <br/>
+```HV2/results/output.xdmf``` - Cauchy stress <br/>
 ```pv_curve.pdf``` - Pressure-volume relationship plot
 
-Each one of them must be visualized using an appropriate software. In this case, ParaView was used. It should be noted that each of the three ```.pvd``` files compile 20 different ```.vtu``` files, so they must be in the same directory when opening the ```.pvd``` files in ParaView.
+Each one of them must be visualized using an appropriate software. In this case, ParaView was used. It should be noted that each of the three ```.pvd``` files compile 20 different ```.vtu``` files, so they must be in the same directory when opening the ```.pvd``` files in ParaView. The same goes for the ```.xdmf``` file, which uses the auxiliary ```.h5``` file.
 
 ## Requirements
 
-FEniCS (tested with 2019.1.0) 
-NumPy
-Matplotlib
+FEniCS (tested with 2019.1.0) <br/>
+NumPy <br/>
+Matplotlib <br/>
 Python 3.6+
 
 However, we strongly recommend activating the conda environment which already has all necessary dependencies. Just write
@@ -152,9 +152,7 @@ conda activate jax-fem-env
 ```
 in the terminal.
 
+For further theoretical context, we refer to the document accompanying this code, which can be accessed here.
 
-
-License
-MIT License - See LICENSE file for details.
-Author
-Converted from Jupyter notebook to modular structure.
+## License
+This project is licensed under the **MIT License**. See [LICENSE](LICENSE) for details.
