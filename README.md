@@ -18,13 +18,15 @@ A modular FEniCS-based implementation for solving the system of PDEs governing t
 ## Module Overview
 ```bash 
 config.py
-```
-Contains all configuration classes:
 
-MeshConfig: File paths for mesh, boundaries, and fiber directions
-MaterialParameters: Holzapfel-Ogden material parameters
-SolverParameters: Newton and Krylov solver settings
-SimulationParameters: Simulation control (pressure, steps, etc.)
+#Contains all configuration classes:
+
+#MeshConfig: File paths for mesh, boundaries, and fiber directions
+#MaterialParameters: Holzapfel-Ogden material parameters
+#SolverParameters: Newton and Krylov solver settings
+#SimulationParameters: Simulation control (pressure, steps, etc.)
+```
+
 ```
 mesh_utils.py
 ```
