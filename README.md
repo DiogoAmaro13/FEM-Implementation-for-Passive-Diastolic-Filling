@@ -21,10 +21,10 @@ config.py
 
 # Contains all configuration classes:
 
-# MeshConfig: File paths for mesh, boundaries, and fiber directions
-# MaterialParameters: Holzapfel-Ogden material parameters
-# SolverParameters: Newton and Krylov solver settings
-# SimulationParameters: Simulation control (pressure, steps, etc.)
+# a) MeshConfig: File paths for mesh, boundaries, and fiber directions
+# b) MaterialParameters: Holzapfel-Ogden material parameters
+# c) SolverParameters: Newton and Krylov solver settings
+# d) SimulationParameters: Simulation control (pressure, steps, etc.)
 ```
 
 ```bash
@@ -41,45 +41,41 @@ compute_reference_volume(): # Get initial undeformed volume
 ```bash
 material_model.py -> CardiacMaterial
 
-# Implements Holzapfel-Ogden hyperelastic model by defining a passive phase, active phase and automatic kinematic quantities computation.
+# Implements Holzapfel-Ogden hyperelastic model:
+
+# e) Passive stress with fiber, sheet, and cross-fiber contributions
+# f) Active stress generation (fiber + transverse)
+# g) Automatic kinematic computations
 ```
 
 ```bash
-solver.py
+solver.py -> CardiacSolver
+
+# Implements the solver based on the mixed Taylor-Hood formulation:
+
+# h) Handles incompressibility constraint
+# i) Implements boundary conditions
+# j) Manages nonlinear solution process
 ```
-Finite element solver:
-
-CardiacSolver: Mixed Taylor-Hood formulation (P2-P1)
-
-Handles incompressibility constraint
-Implements boundary conditions
-Manages nonlinear solution process
-
 
 ```bash
-simulation.py
+simulation.py -> CardiacSimulation
+
+# Defines and controls the overall simulation process
 ```
-High-level simulation control:
-
-CardiacSimulation: Orchestrates incremental pressure loading
-
-Manages time stepping
-Tracks volume-pressure history
-Coordinates result output
-
 
 ```bash
 postprocessing.py
+
+# Defines analysis and visualization functions:
+
+compute_strain_stress(): # Green-Lagrange strain and PK2 stress
+project_cauchy_stress(): # Project stress to DG0 space
+plot_pv_curve(): # Generate pressure-volume curve
+check_equilibrium_residual(): # Verify equilibrium
+check_energy_balance(): # Verify work balance
+check_normal_stress(): # Validate boundary conditions
 ```
-Analysis and visualization:
-
-compute_strain_stress(): Green-Lagrange strain and PK2 stress
-project_cauchy_stress(): Project stress to DG0 space
-plot_pv_curve(): Generate pressure-volume curves
-check_equilibrium_residual(): Verify equilibrium
-check_energy_balance(): Verify work balance
-check_normal_stress(): Validate boundary conditions
-
 
 ```bash
 main.py
