@@ -104,9 +104,9 @@ python main.py
 ```
 This will:
 
-Load the mesh from ```./HV2/```;
-Run a 20-step pressure loading simulation;
-Save displacement, strain, and stress fields;
+Load the mesh from ```./HV2/```; <br/>
+Run a 20-step pressure loading simulation; <br/>
+Save displacement, strain, and stress fields; <br/>
 Generate a pressure-volume curve to validate physiological behaviour.
 
 ### Run Diagnostics
