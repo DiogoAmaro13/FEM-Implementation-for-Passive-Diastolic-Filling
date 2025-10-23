@@ -79,45 +79,48 @@ check_normal_stress(): # Validate boundary conditions
 
 ```bash
 main.py
+
+# Execution file:
+
+# k) Loads mesh and fiber data
+# l) Initializes material and solver
+# m) Runs pressure loading simulation
+# n) Generates outputs and plots
 ```
-Primary execution script that:
-
-Loads mesh and fiber data
-Initializes material and solver
-Runs pressure loading simulation
-Generates outputs and plots
-
 
 ```bash
 diagnostics.py
-```
+
 Verification and debugging script that:
 
-Checks equilibrium residual
-Verifies energy balance
-Validates normal stress on boundaries
-
-Usage
-Basic Simulation
-python main.py
+# o) Checks equilibrium residual
+# p) Verifies energy balance
+# q) Validates normal stress on boundaries
+```
+## Usage
+### Basic Simulation
+```bash 
+python main.py 
+```
 This will:
 
-Load the mesh from ./HV2/
-Run a 20-step pressure loading simulation
-Save displacement, strain, and stress fields
-Generate a pressure-volume curve
+Load the mesh from ```./HV2/```;
+Run a 20-step pressure loading simulation;
+Save displacement, strain, and stress fields;
+Generate a pressure-volume curve to validate physiological behaviour.
 
-Run Diagnostics
-python diagnostics.py
+### Run Diagnostics
+```python diagnostics.py```
 Performs verification checks on the solution.
-Custom Configuration
-Modify parameters in your script:
-from config import MaterialParameters, SimulationParameters
 
-# Change material stiffness
+### Custom Configuration
+Modify parameters:
+```from config import MaterialParameters, SimulationParameters```
+
+## Change material stiffness
 material_params = MaterialParameters(alpha=1.5)
 
-# Change simulation parameters
+## Change simulation parameters
 sim_params = SimulationParameters()
 sim_params.total_pressure = 15 * 133.3 / 1000.0  # 15 mmHg
 sim_params.steps = 30
