@@ -38,17 +38,11 @@ compute_reference_volume(): # Get initial undeformed volume
 ```
 
 
+```bash
+material_model.py -> CardiacMaterial
 
-material_model.py
+# Implements Holzapfel-Ogden hyperelastic model by defining a passive phase, active phase and automatic kinematic quantities computation.
 ```
-Cardiac tissue constitutive model:
-
-CardiacMaterial: Implements Holzapfel-Ogden orthotropic hyperelastic model
-
-Passive stress with fiber, sheet, and cross-fiber contributions
-Active stress generation (fiber + transverse)
-Automatic kinematic computations
-
 
 ```bash
 solver.py
