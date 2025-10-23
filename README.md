@@ -19,23 +19,26 @@ A modular FEniCS-based implementation for solving the system of PDEs governing t
 ```bash 
 config.py
 
-#Contains all configuration classes:
+# Contains all configuration classes:
 
-#MeshConfig: File paths for mesh, boundaries, and fiber directions
-#MaterialParameters: Holzapfel-Ogden material parameters
-#SolverParameters: Newton and Krylov solver settings
-#SimulationParameters: Simulation control (pressure, steps, etc.)
+# MeshConfig: File paths for mesh, boundaries, and fiber directions
+# MaterialParameters: Holzapfel-Ogden material parameters
+# SolverParameters: Newton and Krylov solver settings
+# SimulationParameters: Simulation control (pressure, steps, etc.)
 ```
 
-```
-mesh_utils.py
-```
-Utilities for mesh and geometry:
-
-``` load_ellipsoid_data()```: Load mesh, boundaries, and fiber fields <br />
-``` compute_cavity_volume()```: Calculate cavity volume via divergence theorem <br />
-``` compute_reference_volume()```: Get initial undeformed volume
 ```bash
+mesh_utils.py
+
+# Utilities for mesh and geometry:
+
+``` load_ellipsoid_data()```: #Load mesh, boundaries, and fiber fields
+``` compute_cavity_volume()```: #Calculate cavity volume via divergence theorem
+``` compute_reference_volume()```: #Get initial undeformed volume
+```
+
+
+
 material_model.py
 ```
 Cardiac tissue constitutive model:
