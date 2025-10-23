@@ -12,9 +12,7 @@ $$
 
 Here, $\mathbf{b}$ is the body force density per unit volume, $\mathbf{n}$ is the normal direction of $\partial \Omega$, $\mathbf{t}$ is the traction force, $\Gamma^N$ and $\Gamma^D$ are the Neumann and Dirichlet boundaries.
 
-
-
-
+For further theoretical context, we refer to the document accompanying this code, which can be accessed here.
 
 ## Project Structure
 
@@ -167,8 +165,6 @@ However, we strongly recommend activating the conda environment which already ha
 conda activate jax-fem-env
 ```
 in the terminal.
-
-For further theoretical context, we refer to the document accompanying this code, which can be accessed here.
 
 ## License
 This project is licensed under the **MIT License**. See [LICENSE](LICENSE) for details.
