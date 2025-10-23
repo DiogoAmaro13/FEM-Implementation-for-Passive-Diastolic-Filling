@@ -30,9 +30,9 @@ mesh_utils.py
 ```
 Utilities for mesh and geometry:
 
-``` load_ellipsoid_data()```: Load mesh, boundaries, and fiber fields
-```bash compute_cavity_volume()```: Calculate cavity volume via divergence theorem
-```bash compute_reference_volume()```: Get initial undeformed volume
+``` load_ellipsoid_data()```: Load mesh, boundaries, and fiber fields \\
+``` compute_cavity_volume()```: Calculate cavity volume via divergence theorem \\
+``` compute_reference_volume()```: Get initial undeformed volume
 ```bash
 material_model.py
 ```
