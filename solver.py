@@ -8,7 +8,6 @@ from dolfin import (
     split, FacetNormal
 )
 
-
 class CardiacSolver:
     """
     Solver for cardiac mechanics using mixed formulation (Taylor-Hood elements).
@@ -132,3 +131,4 @@ class CardiacSolver:
     def get_pressure(self):
         """Return the pressure field."""
         return self.w.split()[1]
+
