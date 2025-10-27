@@ -6,7 +6,8 @@ from mesh_utils import load_ellipsoid_data, compute_reference_volume
 from material_model import CardiacMaterial
 from solver import CardiacSolver
 from simulation import CardiacSimulation
-from postprocessing import plot_pv_curve, project_cauchy_stress, write_xdmf_results
+from postprocessing import plot_pv_curve, project_cauchy_stress, write_xdmf_results, check_energy_balance
+
 
 
 def main():
