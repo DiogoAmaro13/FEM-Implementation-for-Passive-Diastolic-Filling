@@ -27,7 +27,6 @@ For further theoretical context, we refer to the document accompanying this code
 ├── simulation.py          # Main simulation driver
 ├── postprocessing.py      # Post-processing and visualization utilities
 ├── main.py                # Main execution script
-├── diagnostics.py         # Diagnostic and verification tools
 └── README.md              
 ```
 
@@ -103,16 +102,6 @@ main.py
 # m) Runs pressure loading simulation
 # n) Generates outputs and plots
 ```
-
-```bash
-diagnostics.py
-
-Verification and debugging script that:
-
-# o) Checks equilibrium residual
-# p) Verifies energy balance
-# q) Validates normal stress on boundaries
-```
 ## Usage
 ### Basic Simulation
 ```bash 
@@ -124,12 +113,6 @@ Load the mesh from ```./HV2/```; <br/>
 Run a 20-step pressure loading simulation; <br/>
 Save displacement, strain, and stress fields; <br/>
 Generate a pressure-volume curve to validate physiological behaviour.
-
-### Run Diagnostics
-```bash 
-python diagnostics.py
-```
-Performs verification checks on the solution (energy balance and residuals)
 
 ### Custom Configuration
 To modify parameters:
