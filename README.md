@@ -14,7 +14,7 @@ $$
 
 Here, $\mathbf{b}$ is the body force density per unit volume, $\mathbf{n}$ is the normal direction of $\partial \Omega$, $\mathbf{t}$ is the traction force, $\Gamma^N$ and $\Gamma^D$ are the Neumann and Dirichlet boundaries.
 
-For further theoretical context, we refer to the document accompanying this code, which can be accessed here.
+For further theoretical context, we refer to the paper accompanying this code, which can be accessed here.
 
 ## Project Structure
 
